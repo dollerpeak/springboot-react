@@ -1,4 +1,4 @@
-package com.study.greencode.home.controller;
+package com.study.greencode.home;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,10 +9,11 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @Slf4j
 @RequestMapping("/greencode")
-public class HomeController {
+public class ControllerHome {
 	
 	@GetMapping("/home")
 	public String home() {
+		log.info("<<<<<<<<<<<<<< GreenCode Home >>>>>>>>>>>>>>");
 		return "/greencode/home";
 	}
 }

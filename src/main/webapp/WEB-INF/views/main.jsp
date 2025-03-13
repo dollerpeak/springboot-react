@@ -3,10 +3,11 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>title</title>
+	<title>main</title>
 </head>
 <body>
-	<h2>Main JSP</h2>
+	<h2>directory : src/main/webapp/WEB-INF/views/main.jsp</h2>
+	<h2>jsp page</h2>
 	<a href="#">스터디별 내용</a>
 	<a href="#">스터디별 내용</a>
 </body>
