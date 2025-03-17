@@ -6,6 +6,24 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>test</title>
+
+	<!-- 내부스타일 -->
+	<style>
+		/* 특정 tag에 적용 */
+		label {
+			color: blue;
+		}
+		/* 특정 id에 적용 */
+		#id1 {
+			color: red;
+		}
+		#id2 {
+			color: pink;
+		}
+	</style>
+	
+	<!-- 외부스타일 -->
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -15,18 +33,19 @@
 		<form action="">
 			<div>
 				<label for="name">사용자이름</label>
-				<input type="text">
+				<!-- 내부스타일, 인라인으로 적용 -->
+				<input type="text" style="color: red"> 
 				<span>5자이하</span>
 			</div>
 			<div>
-				<label for="password">비밀번호</label>
+				<label for="password" id="id1">비밀번호</label>
 				<input type="password">
-				<span>인라인 텍스트</span>
+				<span id="id2">인라인 텍스트</span>
 			</div>
 			<div>
-				<label for="tel">전화번호</label>
+				<label for="tel" class="class1">전화번호</label>
 				<input type="tel">
-				<span>ex)01011112222</span>
+				<span class="class1">ex)01011112222</span>
 			</div>
 			<div>
 				<label for="email">이메일</label>
