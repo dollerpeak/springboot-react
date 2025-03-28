@@ -7,8 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>test</title>
 
+	<!-- 강의 테스트 -->
 	<!-- 내부스타일 -->
-	<style>
+	<!-- <style>
 		/* 특정 tag에 적용 */
 		label {
 			color: blue;
@@ -20,37 +21,41 @@
 		#id2 {
 			color: pink;
 		}
-	</style>
+	</style> -->
 	
 	<!-- 외부스타일 -->
 	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	<h2>test</h2>
-	
-	<div>
-		<form action="">
-			<div>
+	<div id="wrapper" class="wrapper">
+		<form id="registrationForm" class="registrationForm" action="">
+			<h2>test</h2>
+			<div class="inputGroup">
 				<label for="name">사용자이름</label>
 				<!-- 내부스타일, 인라인으로 적용 -->
-				<input type="text" style="color: red"> 
-				<span>5자이하</span>
+				<!-- <input type="text" style="color: red"> --> 
+				<input type="text" id="name" class="nameInput">
+				<!-- <span >5자이하</span> -->
+				<span class="helperText">알림</span>
 			</div>
-			<div>
+			<div class="inputGroup">
 				<label for="password" id="id1">비밀번호</label>
-				<input type="password">
-				<span id="id2">인라인 텍스트</span>
+				<input type="password" id="password" class="passwordInput">
+				<!-- <span id="id2" class="helperText">인라인 텍스트</span> -->
+				<span class="helperText">알림</span>
 			</div>
-			<div>
+			<div class="inputGroup">
 				<label for="tel" class="class1">전화번호</label>
-				<input type="tel">
-				<span class="class1">ex)01011112222</span>
+				<input type="tel" id="tel" class="telInput">
+				<!-- <span class="helperText">ex)01011112222</span> -->
+				<span class="helperText">010-1234-5678</span>
 			</div>
-			<div>
+			<div class="inputGroup">
 				<label for="email">이메일</label>
-				<input type="email">
-				<span>@</span>
+				<input type="email" id="email" class="emailInput">
+				<!-- <span class="helperText">@</span> -->
+				<span class="helperText">알림</span>
 			</div>
 			
 			<button type="submit">등록</button>

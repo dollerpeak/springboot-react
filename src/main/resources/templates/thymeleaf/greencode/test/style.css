@@ -1,5 +1,93 @@
 @charset "UTF-8";
 
-.class1 {
+/* 개인 테스트 */
+/* .class1 {
 	color: green;
+} */
+
+/* css에서 변수 선언이 가능함 */
+:root {
+	--primaryColor: green;
+	--errorColor: red;
 }
+
+html {
+	box-sizing: border-box; /* content-box, border-box */
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: white; 
+}
+
+#wrapper {
+	width: 420px;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.5); /* rgba(수직방향, 수평방향, 블러값영역, 블러값) */
+}
+
+h2 {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.inputGroup {
+	padding: 8px 12px;
+}
+
+.inputGroup label {
+	display: block;
+	padding: 12px 0px;
+}
+
+.inputGroup input {
+	display: block;
+	width: 93%;
+	padding: 12px;
+	border: 2px solid #e2e2e2;
+}
+
+.inputGroup .helperText {
+	display: block;
+	padding-top: 8px;
+}
+
+.inputGroup input:focus {
+	outline: none;
+	/* border-color: #777; */
+	border-color: blue;
+}
+
+#wrapper button {
+	display: block;
+	width: 85%;
+	margin: 0px auto;
+	height: 50px;
+	margin-bottom: 25px;
+	font-size: 18px;
+	background-color: var(--primaryColor);
+	border: 2px solid var(--primaryColor);
+	color: white;
+	cursor: pointer;
+}
+
+/*  */
+.inputGroup.invalid input {
+	border-color: var(--errorColor);
+	visibility: visible;
+}
+
+.inputGroup.valid .helperText {
+	visibility: hidden;
+}
+
+.inputGroup.invalid .helperText {
+	border-color: var(--errorColor);
+}
+
+
+
+
