@@ -32,37 +32,38 @@
 
 <body>
 	<div id="wrapper" class="wrapper">
-		<form id="registrationForm" class="registrationForm" action="">
-			<h2>test</h2>
+		<form id="registrationForm" class="registrationForm">
+			<h2>회원등록</h2>
 			<div class="inputGroup">
-				<label for="name">사용자이름</label>
-				<!-- 내부스타일, 인라인으로 적용 -->
-				<!-- <input type="text" style="color: red"> --> 
-				<input type="text" id="name" class="nameInput">
-				<!-- <span >5자이하</span> -->
+				<label for="nickname">사용자이름</label>
+				<input type="text" id="nickname" class="nicknameInput">
 				<span class="helperText">알림</span>
 			</div>
 			<div class="inputGroup">
-				<label for="password" id="id1">비밀번호</label>
-				<input type="password" id="password" class="passwordInput">
-				<!-- <span id="id2" class="helperText">인라인 텍스트</span> -->
-				<span class="helperText">알림</span>
-			</div>
-			<div class="inputGroup">
-				<label for="tel" class="class1">전화번호</label>
-				<input type="tel" id="tel" class="telInput">
-				<!-- <span class="helperText">ex)01011112222</span> -->
-				<span class="helperText">010-1234-5678</span>
-			</div>
-			<div class="inputGroup">
-				<label for="email">이메일</label>
+				<label for="userEmail">이메일 주소</label>
 				<input type="email" id="email" class="emailInput">
-				<!-- <span class="helperText">@</span> -->
+				<span class="helperText">알림</span>
+				<!-- /*글자표현*/ -->
+			</div>
+			<div class="inputGroup">
+				<label for="userPassword">비밀번호</label>
+				<input type="password" id="userPassword" class="passwordInput">
 				<span class="helperText">알림</span>
 			</div>
-			
-			<button type="submit">등록</button>
-		</form>		
+			<div class="inputGroup">
+				<label for="confirmPassword">비밀번호 확인</label>
+				<input type="password" id="confirmPassword" class="confirmPasswordInput">
+				<span class="helperText">알림</span>
+			</div>
+			<div class="inputGroup">
+				<label for="phone">휴대폰번호</label>
+				<input type="tel" id="phone" class="phoneInput">
+				<span class="helperText">예:010-1234-5678</span>
+			</div>
+			<button type="submit">등록 완료</button>
+		</form>
+		<!-- //form태그는 웹브라우저(프론트엔드)에서 웹서버(백엔드)로 데이터를 넘기고자 할때
+	        //input태그와 같이 작성해주는 태그입니다. -->
 	</div>
 
 	<br><br>
