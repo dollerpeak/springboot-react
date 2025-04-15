@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @Slf4j
 @RequestMapping("/greencode")
-public class ControllerHome {
+public class ControllerGreencodeHome {
 	
 	@GetMapping("/home")
 	public String home() {
