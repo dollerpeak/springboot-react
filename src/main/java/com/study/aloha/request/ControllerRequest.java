@@ -22,6 +22,8 @@ public class ControllerRequest {
 		requestBoardList.add(new RequestBoard("제목1", "작성자1", "내용1"));
 		requestBoardList.add(new RequestBoard("제목2", "작성자2", "내용2"));
 		requestBoardList.add(new RequestBoard("제목3", "작성자3", "내용3"));
+		
+		log.info(requestBoardList.toString());
 
 		return requestBoardList;
 		// return new ResponseEntity<>(requestBoardList, HttpStatus.OK);
