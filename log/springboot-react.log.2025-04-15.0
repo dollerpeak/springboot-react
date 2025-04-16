@@ -1,0 +1,76 @@
+2025-04-15 16:24:40.285 [INFO ] 29084 --- [restartedMain] c.study.SpringbootReactApplication       : Starting SpringbootReactApplication using Java 17.0.6 with PID 29084 (D:\workspace-sts\springboot-react\target\classes started by P088454 in D:\workspace-sts\springboot-react)
+2025-04-15 16:24:40.289 [INFO ] 29084 --- [restartedMain] c.study.SpringbootReactApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-04-15 16:24:40.326 [INFO ] 29084 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-15 16:24:40.326 [INFO ] 29084 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-15 16:24:40.411 [WARN ] 29084 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.study.SpringbootReactApplication]
+2025-04-15 16:24:40.466 [ERROR] 29084 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.study.SpringbootReactApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:185)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:418)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.study.SpringbootReactApplication.main(SpringbootReactApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'controllerHome' for bean class [com.study.greencode.home.ControllerHome] conflicts with existing, non-compatible bean definition of same name and class [com.study.aloha.ControllerHome]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:332)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:267)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:193)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:171)
+	... 18 common frames omitted
+2025-04-15 16:27:13.853 [INFO ] 27112 --- [restartedMain] c.study.SpringbootReactApplication       : Starting SpringbootReactApplication using Java 17.0.6 with PID 27112 (D:\workspace-sts\springboot-react\target\classes started by P088454 in D:\workspace-sts\springboot-react)
+2025-04-15 16:27:13.854 [INFO ] 27112 --- [restartedMain] c.study.SpringbootReactApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-04-15 16:27:13.880 [INFO ] 27112 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-15 16:27:13.880 [INFO ] 27112 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-15 16:27:14.560 [INFO ] 27112 --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer         : Tomcat initialized with port 8081 (http)
+2025-04-15 16:27:14.570 [INFO ] 27112 --- [restartedMain] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-15 16:27:14.572 [INFO ] 27112 --- [restartedMain] o.a.catalina.core.StandardService        : Starting service [Tomcat]
+2025-04-15 16:27:14.573 [INFO ] 27112 --- [restartedMain] o.a.catalina.core.StandardEngine         : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-04-15 16:27:14.611 [INFO ] 27112 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-15 16:27:14.611 [INFO ] 27112 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 731 ms
+2025-04-15 16:27:14.685 [INFO ] 27112 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-04-15 16:27:14.891 [INFO ] 27112 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-15 16:27:14.900 [INFO ] 27112 --- [restartedMain] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-8081"]
+2025-04-15 16:27:14.915 [INFO ] 27112 --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer         : Tomcat started on port 8081 (http) with context path '/'
+2025-04-15 16:27:14.922 [INFO ] 27112 --- [restartedMain] c.study.SpringbootReactApplication       : Started SpringbootReactApplication in 1.389 seconds (process running for 1.964)
+2025-04-15 16:27:32.189 [INFO ] 27112 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-15 16:27:32.190 [INFO ] 27112 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-15 16:27:32.190 [INFO ] 27112 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-04-15 16:27:32.212 [INFO ] 27112 --- [http-nio-8081-exec-1] com.study.main.ControllerMain            : <<<<<<<<<<<<<< Main >>>>>>>>>>>>>>
+2025-04-15 16:27:47.267 [INFO ] 27112 --- [http-nio-8081-exec-4] com.study.main.ControllerMain            : <<<<<<<<<<<<<< Main >>>>>>>>>>>>>>
+2025-04-15 16:27:59.873 [INFO ] 27112 --- [http-nio-8081-exec-3] c.s.g.home.ControllerGreencodeHome       : <<<<<<<<<<<<<< GreenCode Home >>>>>>>>>>>>>>
+2025-04-15 16:28:02.946 [INFO ] 27112 --- [http-nio-8081-exec-5] com.study.aloha.ControllerAlohaHome      : <<<<<<<<<<<<<< Aloha Home >>>>>>>>>>>>>>
+2025-04-15 16:28:05.650 [INFO ] 27112 --- [http-nio-8081-exec-7] c.s.g.home.ControllerGreencodeHome       : <<<<<<<<<<<<<< GreenCode Home >>>>>>>>>>>>>>
+2025-04-15 16:28:08.108 [INFO ] 27112 --- [http-nio-8081-exec-6] com.study.aloha.ControllerAlohaHome      : <<<<<<<<<<<<<< Aloha Home >>>>>>>>>>>>>>
+2025-04-15 16:28:54.793 [INFO ] 27112 --- [http-nio-8081-exec-9] com.study.main.ControllerMain            : <<<<<<<<<<<<<< Main >>>>>>>>>>>>>>
+2025-04-15 16:28:55.837 [INFO ] 27112 --- [http-nio-8081-exec-10] c.s.g.home.ControllerGreencodeHome       : <<<<<<<<<<<<<< GreenCode Home >>>>>>>>>>>>>>
+2025-04-15 16:28:56.778 [INFO ] 27112 --- [http-nio-8081-exec-1] com.study.main.ControllerMain            : <<<<<<<<<<<<<< Main >>>>>>>>>>>>>>
+2025-04-15 16:29:33.480 [INFO ] 27112 --- [http-nio-8081-exec-2] com.study.main.ControllerMain            : <<<<<<<<<<<<<< Main >>>>>>>>>>>>>>
+2025-04-15 16:30:06.656 [INFO ] 27112 --- [http-nio-8081-exec-3] com.study.main.ControllerMain            : <<<<<<<<<<<<<< Main >>>>>>>>>>>>>>
+2025-04-15 16:30:26.861 [INFO ] 27112 --- [http-nio-8081-exec-5] c.s.g.home.ControllerGreencodeHome       : <<<<<<<<<<<<<< GreenCode Home >>>>>>>>>>>>>>
+2025-04-15 16:30:27.949 [INFO ] 27112 --- [http-nio-8081-exec-7] com.study.main.ControllerMain            : <<<<<<<<<<<<<< Main >>>>>>>>>>>>>>
+2025-04-15 16:30:40.903 [INFO ] 27112 --- [http-nio-8081-exec-6] com.study.aloha.ControllerAlohaHome      : <<<<<<<<<<<<<< Aloha Home >>>>>>>>>>>>>>
+2025-04-15 16:30:41.869 [INFO ] 27112 --- [http-nio-8081-exec-8] com.study.main.ControllerMain            : <<<<<<<<<<<<<< Main >>>>>>>>>>>>>>
+2025-04-15 16:31:35.505 [INFO ] 27112 --- [http-nio-8081-exec-10] com.study.main.ControllerMain            : <<<<<<<<<<<<<< Main >>>>>>>>>>>>>>
+2025-04-15 16:31:36.560 [INFO ] 27112 --- [http-nio-8081-exec-1] c.s.g.home.ControllerGreencodeHome       : <<<<<<<<<<<<<< GreenCode Home >>>>>>>>>>>>>>
+2025-04-15 16:31:44.802 [INFO ] 27112 --- [http-nio-8081-exec-2] com.study.main.ControllerMain            : <<<<<<<<<<<<<< Main >>>>>>>>>>>>>>
+2025-04-15 16:31:51.538 [INFO ] 27112 --- [RMI TCP Connection(14)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-04-15 16:31:51.540 [INFO ] 27112 --- [RMI TCP Connection(14)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-15 16:31:51.541 [INFO ] 27112 --- [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol      : Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-15 16:31:52.002 [INFO ] 27112 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-15 16:31:52.002 [INFO ] 27112 --- [RMI TCP Connection(14)-127.0.0.1] o.a.coyote.http11.Http11NioProtocol      : Stopping ProtocolHandler ["http-nio-8081"]
