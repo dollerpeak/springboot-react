@@ -1,4 +1,4 @@
-package com.study.aloha.di;
+package com.study.aloha.test.di;
 
 import org.springframework.stereotype.Component;
 

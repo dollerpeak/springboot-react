@@ -1,4 +1,4 @@
-package com.study.aloha.http;
+package com.study.aloha.test.http;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestClient;

@@ -34,10 +34,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<!-- restclient 사용 : resttemplete, webclient, restclient 
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-webflux</artifactId>
-		</dependency>
+		</dependency>-->
+		
 		<!--front-->
 		<!--thymeleaf-->
 		<dependency>

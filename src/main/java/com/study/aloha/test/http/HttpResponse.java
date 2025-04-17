@@ -1,4 +1,4 @@
-package com.study.aloha.http;
+package com.study.aloha.test.http;
 
 import java.util.Map;
 

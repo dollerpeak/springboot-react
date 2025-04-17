@@ -1,8 +1,10 @@
-package com.study.aloha.request;
+package com.study.aloha.test.request;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class RequestBoard {
 	int boardNo;
 	String title;
