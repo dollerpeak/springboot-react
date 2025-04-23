@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.ContentDisposition;
@@ -30,15 +33,16 @@ import lombok.extern.slf4j.Slf4j;
 public class ControllerResponse {
 
 	@GetMapping(value = "/login")
-	//public String user() {
-	public void user() {
+	public String user() {
+//	public void user() {
 		log.info("[GET] - /login - 로그인 페이지");
-		//return "/aloha/test/response/login";
+		return "/aloha/test/response/login";
 	}
 
 	@GetMapping(value = { "/", "" })
 	public String home() {
 		log.info("[GET] - / - 메인 페이지");
+		log.info("<<<<<<<<<<<<<< Aloha test Response >>>>>>>>>>>>>>");
 		return "/aloha/test/response/index";
 	}
 
@@ -68,6 +72,7 @@ public class ControllerResponse {
 	@ResponseBody
 	@GetMapping(value = "/show1")
 	public ResponseEntity<byte[]> show1() throws IOException {
+		// http://localhost:8081/aloha/test/response/show1
 		log.info("[GET] - show1");
 		//ClassPathResource imageFile = new ClassPathResource("/static/file/hamburger.png");
 		ClassPathResource imageFile = new ClassPathResource("/static/file/beef.jpg");
@@ -83,6 +88,7 @@ public class ControllerResponse {
 //	@ResponseBody
 	@GetMapping(value = "/show2")
 	public void show2(@RequestParam String path, HttpServletResponse response) throws Exception {
+		// http://localhost:8081/aloha/test/response/show2?path=C:/Users/P088454/Downloads/m3.PNG
 		log.info("[GET] - show2");
 		log.info("path = " + path);
 
@@ -111,6 +117,11 @@ public class ControllerResponse {
 		HttpHeaders httpHeaders = new HttpHeaders();
 		httpHeaders.setContentType(MediaType.APPLICATION_OCTET_STREAM);
 		httpHeaders.setContentDispositionFormData("attchment", "111.jpg");
+		
+		// 테스트
+		//Path path = Paths.get("/static/file").resolve("beef.jpg").normalize();
+		//log.info("path = " + path.toString());
+		//byte[] testByte = Files.readAllBytes(path); // 왜 에러나지?
 
 		return new ResponseEntity<>(imageByte, httpHeaders, HttpStatus.OK);
 	}
@@ -118,6 +129,7 @@ public class ControllerResponse {
 	@ResponseBody
 	@GetMapping(value = "/download2")
 	public void download2(@RequestParam String path, HttpServletResponse response) throws Exception {
+		// http://localhost:8081/aloha/test/response/download2?path=C:/Users/P088454/Downloads/m3.PNG
 		log.info("[GET] - download2");
 		log.info("path = " + path);
 		
@@ -128,7 +140,15 @@ public class ControllerResponse {
 		FileInputStream fis = new FileInputStream(file);
 		ServletOutputStream sos = response.getOutputStream();		
 		FileCopyUtils.copy(fis, sos);
-
+		
+		// 테스트, MediaType을 지정해 줌
+		Path testPath = Paths.get(path.toString());
+		String mediaType = Files.probeContentType(testPath);		
+		log.info("mediaType = " + mediaType);		
+		//HttpHeaders httpHeaders = new HttpHeaders();
+		//httpHeaders.add(HttpHeaders.CONTENT_TYPE, mediaType);
+		//httpHeaders.setContentDisposition(ContentDisposition.builder("attchment").filename("222.jpg").build());
+		// "/static/file/beef.jpg"
 	}
 
 }
