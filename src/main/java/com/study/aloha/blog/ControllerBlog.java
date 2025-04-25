@@ -109,9 +109,14 @@ public class ControllerBlog {
 	}
 	
 //	@ResponseBody
-//	@PutMapping("/update")
-//	public ResponseEntity<String> putUpdate(@RequestBody Blog blog) {
-//		return new ResponseEntity<>("success", HttpStatus.OK);
+	@PutMapping("/update")
+	public ResponseEntity<String> putUpdate(@RequestBody Blog blog) {
+		log.info("blog = " + blog.toString());
+		return new ResponseEntity<>("success", HttpStatus.OK);
+	}
+//	public ResponseEntity<Blog> putUpdate(@RequestBody Blog blog) {
+//		log.info("blog = " + blog.toString());
+//		return new ResponseEntity<>(blog, HttpStatus.OK);
 //	}
  
 	// delete
@@ -122,17 +127,34 @@ public class ControllerBlog {
 	}
 	
 	@PostMapping("/delete")
-	public String delete(@RequestBody Blog blog) {
+	public String delete(Blog blog) {
+		log.info("blog = " + blog.toString());
 		return "redirect:/aloha/blog/select";
 	}
 	
 //	@ResponseBody
-//	@DeleteMapping("/delete")
-//	public ResponseEntity<String> deletetest(@RequestParam int id) {
-//		return new ResponseEntity<>("success", HttpStatus.OK);
+	@DeleteMapping("/delete")
+	public ResponseEntity<String> deletetest(@RequestParam int id) {
+		log.info("id = " + id);
+		return new ResponseEntity<>("success", HttpStatus.OK);
+	}
+	
+//	//fetch
+//	//@PostMapping("/test")
+//	@GetMapping("/test")
+//	//public ResponseEntity<List<Blog>> test() {
+//	public String test() {
+//		List<Blog> blogList = new ArrayList<>();
+//		blogList.add(new Blog(0, "제목0", "작성자0", "내용0", DateFormat.getFormatString(System.currentTimeMillis(), null),
+//				DateFormat.getFormatString(System.currentTimeMillis(), null)));
+//		blogList.add(new Blog(1, "제목1", "작성자1", "내용1", DateFormat.getFormatString(System.currentTimeMillis(), null),
+//				DateFormat.getFormatString(System.currentTimeMillis(), null)));
+//		blogList.add(new Blog(2, "제목2", "작성자2", "내용2", DateFormat.getFormatString(System.currentTimeMillis(), null),
+//				DateFormat.getFormatString(System.currentTimeMillis(), null)));
+//		
+//		//model.addAttribute("blog", blogList.get(0));
+//		return "/aloha/blog/select";
 //	}
-	
-	
 	
 	
 	

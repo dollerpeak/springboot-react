@@ -10,7 +10,8 @@
 	<a href="/aloha/blog">뒤로</a> </br>
 	</br></br>
  
- 	<form action="/aloha/blog/update" method="post">
+ 	<form action="/aloha/blog/update" method="post" id="form">
+ 	<!-- <form action="/aloha/blog/delete" method="post" id="form"> -->
 		<table border="1">
 			<tr style="display: none">
 				<td>id</td>
@@ -32,9 +33,20 @@
 				</td>
 			</tr>
 		</table>
-		<input type="submit" value="수정">
+		<input type="submit" value="수정-FORM">
+		<button type="button" onclick="update()" >수정-JS</button> </br>
+		<!-- <button type="button" id="btn-update">수정-JS</button> </br> -->
+		<input type="submit" value="삭제-FORM">
+		<button type="button" onclick="remove()">삭제-JS</button></br>
+		<!-- <button type="button" id="btn-test">Fetch-JS</button> </br> -->
 	</form>
 	<!-- <a th:href="@{/aloha/blog/update(id=${blog.id})}">수정</a> -->
+	
+	<script src="/js/aloha/blog/update.js"></script>
+	<!-- <script type="text/javascript">
+		let test = "[[${blog.id}]]";
+		alert(test);
+	</script> -->
 	
 </body>
 </html>
