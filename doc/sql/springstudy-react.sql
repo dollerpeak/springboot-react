@@ -7,7 +7,7 @@ select * from board
 
 
 
-create table zoo (
+create table blog (
 	id int(11) not null auto_increment comment 'seq id',
 	species varchar(100) not null default 'any' comment '종',
 	gender varchar(1) not null default 'M' comment '성별',
