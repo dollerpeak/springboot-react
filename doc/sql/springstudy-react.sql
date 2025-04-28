@@ -1,29 +1,44 @@
 
 use springstudy
 
-=============================================================
+===========================================================================================
 
-select * from board
-
-
-
-create table blog (
-	id int(11) not null auto_increment comment 'seq id',
-	species varchar(100) not null default 'any' comment '종',
-	gender varchar(1) not null default 'M' comment '성별',
-	name varchar(100) null default null comment '이름',
-	age int(4) null default null comment '나이',
-	reg_date datetime not null default current_timestamp comment '등록 날짜', 
-	chg_date datetime not null default current_timestamp comment '변경 날짜',
-	
-	constraint zoo_pk primary key(id) comment '동물원'
-)
+CREATE TABLE `blog` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `title` varchar(100) NOT NULL COMMENT '제목',
+  `writer` varchar(100) NOT NULL COMMENT '작성자',
+  `contents` text DEFAULT NULL COMMENT '내용',
+  `hits` int(11) NOT NULL default '0' COMMENT '조회수',
+  `frst_reg_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '최초등록일',
+  `frst_reg_user_id` varchar(20) NOT NULL DEFAULT 'SYSTEM' COMMENT '최초등록자',
+  `last_chg_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '변경등록일',
+  `last_chg_user_id` varchar(20) NOT NULL DEFAULT 'SYSTEM' COMMENT '변경등록자',  
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
 -- alter
 alter table zoo
 add reg_date datetime not null default current_timestamp comment '등록 날짜',
 add chg_date datetime not null default current_timestamp comment '변경 날짜'
+
+
+===========================================================================================
+
+insert into blog (title, writer, contents) values ("제목1", "작성자1", "내용1")
+insert into blog (title, writer, contents) values ("제목2", "작성자2", "내용2")
+insert into blog (title, writer, contents) values ("제목3", "작성자3", "내용3")
+
+
+===========================================================================================
+
+
+select * from blog
+
+
+
+
+
 
 
 

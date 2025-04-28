@@ -16,8 +16,11 @@
 			<th>제목</th>
 			<th>작성자</th>
 			<th>글내용</th>
+			<th>조회수</th>
 			<th>등록일자</th>
+			<th>등록자</th>
 			<th>수정일자</th>
+			<th>수정자</th>
 		</tr>
 
 		<tr th:each="blog:${blogList}">
@@ -28,9 +31,12 @@
 				<a th:href="@{/aloha/blog/detail(id=${blog.id})}" th:text="${blog.title}"></a>				
 			</td>
 			<td th:text="${blog.writer}"></td>
-			<td th:text="${blog.content}"></td>
-			<td th:text="${blog.regDate}"></td>
-			<td th:text="${blog.upDate}"></td>
+			<td th:text="${blog.contents}"></td>
+			<td th:text="${blog.hits}"></td>
+			<td th:text="${blog.frstRegDate}"></td>
+			<td th:text="${blog.frstRegUserId}"></td>
+			<td th:text="${blog.lastChgDate}"></td>
+			<td th:text="${blog.lastChgUserId}"></td>
 		</tr>
 	</table>
 	<a href="/aloha/blog/insert">작성</a>

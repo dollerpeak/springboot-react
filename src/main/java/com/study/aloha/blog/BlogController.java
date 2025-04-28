@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -24,7 +25,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Controller
 @RequestMapping("/aloha/blog")
-public class ControllerBlog {
+public class BlogController {
+	@Autowired
+	BlogService blogService;
 
 	@GetMapping({"/", ""})
 	public String main() {
@@ -33,16 +36,18 @@ public class ControllerBlog {
 	
 	// select
 	@GetMapping("/select")
-	public String select(Model model) {
-		List<Blog> blogList = new ArrayList<>();
-		blogList.add(new Blog(0, "제목0", "작성자0", "내용0", DateFormat.getFormatString(System.currentTimeMillis(), null),
-				DateFormat.getFormatString(System.currentTimeMillis(), null)));
-		blogList.add(new Blog(1, "제목1", "작성자1", "내용1", DateFormat.getFormatString(System.currentTimeMillis(), null),
-				DateFormat.getFormatString(System.currentTimeMillis(), null)));
-		blogList.add(new Blog(2, "제목2", "작성자2", "내용2", DateFormat.getFormatString(System.currentTimeMillis(), null),
-				DateFormat.getFormatString(System.currentTimeMillis(), null)));
+	public String select(Model model) throws Exception{
+//		blogService.select();
+//		List<Blog> blogList = new ArrayList<>();
+//		blogList.add(new Blog(0, "제목0", "작성자0", "내용0", DateFormat.getFormatString(System.currentTimeMillis(), null),
+//				DateFormat.getFormatString(System.currentTimeMillis(), null)));
+//		blogList.add(new Blog(1, "제목1", "작성자1", "내용1", DateFormat.getFormatString(System.currentTimeMillis(), null),
+//				DateFormat.getFormatString(System.currentTimeMillis(), null)));
+//		blogList.add(new Blog(2, "제목2", "작성자2", "내용2", DateFormat.getFormatString(System.currentTimeMillis(), null),
+//				DateFormat.getFormatString(System.currentTimeMillis(), null)));
 
-		model.addAttribute("blogList", blogList);
+		model.addAttribute("blogList", blogService.select());
+		log.info("controller - select");
 		
 		return "/aloha/blog/select";
 	}
