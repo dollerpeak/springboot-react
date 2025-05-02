@@ -32,6 +32,7 @@ insert into blog (title, writer, contents) values ("제목3", "작성자3", "내
 
 ===========================================================================================
 
+commit
 
 select * from blog
 
