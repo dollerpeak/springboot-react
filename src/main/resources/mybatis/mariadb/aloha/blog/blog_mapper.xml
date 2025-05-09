@@ -63,13 +63,13 @@
 	
 	<update id="update" parameterType="com.study.aloha.blog.BlogEntity">
 		UPDATE BLOG
-			SET TITLE = #{title}, WRITER = #{writer}, CONTENTS = #{contents}, HITS = #{hits}
+			SET TITLE = #{title}, WRITER = #{writer}, CONTENTS = #{contents}, HITS = #{hits},
 				LAST_CHG_DATE = #{lastChgDate}, LAST_CHG_USER_ID = #{lastChgUserId}  
 		WHERE ID = #{id}
 	</update>
 	
 	
-	<delete id="delete" parameterType="java.lang.Integer">
+	<delete id="delete" parameterType="java.lang.Long">
 		DELETE FROM BLOG
 		WHERE ID = #{id}
 	</delete>
