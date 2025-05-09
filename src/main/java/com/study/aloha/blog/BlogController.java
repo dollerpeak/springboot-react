@@ -46,7 +46,10 @@ public class BlogController {
 //		blogList.add(new Blog(2, "제목2", "작성자2", "내용2", DateFormat.getFormatString(System.currentTimeMillis(), null),
 //				DateFormat.getFormatString(System.currentTimeMillis(), null)));
 
+		// repository로 mapper연결할때
 		model.addAttribute("blogList", blogService.select());
+		// interface mapper연결할때
+		//model.addAttribute("blogList", blogService.select_mapper());
 		log.info("controller - select");
 		
 		return "/aloha/blog/select";

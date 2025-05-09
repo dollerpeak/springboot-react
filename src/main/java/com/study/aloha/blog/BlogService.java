@@ -18,13 +18,30 @@ public class BlogService {
 	@Autowired
 	BlogRepository blogRepository;
 
+	// repository로 mapper연결할때
 	public List<BlogDto> select() throws Exception {
 		List<BlogDto> listDto = new ArrayList<>();
 		List<BlogEntity> listEntity = blogRepository.select();
 
 		log.info("service - select = " + listEntity.size());
 		for (BlogEntity entity : listEntity) {
-			log.info("service - writer = " + entity.getWriter());
+			//log.info("service - writer = " + entity.getWriter());
+			listDto.add(entity.toDto());
+		}
+
+		return listDto;
+	}
+	
+	@Autowired
+	BlogMapper blogMapper;
+	// interface mapper연결할때
+	public List<BlogDto> select_mapper() throws Exception {
+		List<BlogDto> listDto = new ArrayList<>();
+		List<BlogEntity> listEntity = blogMapper.select();
+
+		log.info("service - select_mapper = " + listEntity.size());
+		for (BlogEntity entity : listEntity) {
+			//log.info("service - writer = " + entity.getWriter());
 			listDto.add(entity.toDto());
 		}
 
