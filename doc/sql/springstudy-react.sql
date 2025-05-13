@@ -61,13 +61,15 @@ commit
 
 select * from blog
 
-select * from board
+select * from attach
+
+select * from comment 
 
 
 
 
 
-
+select * from panel
 
 
 
