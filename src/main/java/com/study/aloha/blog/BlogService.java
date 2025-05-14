@@ -6,7 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.study.aloha.blog.attach.AttachService;
 import com.study.common.DateFormat;
 
 import lombok.extern.slf4j.Slf4j;
@@ -17,6 +19,8 @@ import lombok.extern.slf4j.Slf4j;
 public class BlogService {
 	@Autowired
 	BlogRepository blogRepository;
+	@Autowired
+	AttachService attachService;
 
 	// repository로 mapper연결할때
 	public List<BlogDto> select() throws Exception {
@@ -66,6 +70,11 @@ public class BlogService {
 		log.info("before blogEntity = " + blogEntity.toString());
 		blogRepository.insert(blogEntity);
 		log.info("after blogEntity = " + blogEntity.toString());
+
+		for (MultipartFile multipartFile : blogDto.getFileList()) {
+			attachService.upload(blogEntity.getId(), multipartFile);
+		}
+		
 
 		return blogEntity.getId();
 	}

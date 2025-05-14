@@ -6,14 +6,18 @@
 	<insert id="insert" parameterType="com.study.aloha.blog.attach.AttachEntity" useGeneratedKeys="true" keyProperty="id">
 		INSERT INTO ATTACH (			
 			BLOG_ID,
-			NAME,
+			ORIGINAL_NAME,
+			SAVE_NAME,
 			PATH,
+			SIZE,
 			FRST_REG_USER_ID,
 			LAST_CHG_USER_ID
 		) VALUES (
 			#{blogId},
-			#{name},
+			#{originalName},
+			#{saveName},
 			#{path},
+			#{size},
 			#{frstRegUserId},
 			#{lastChgUserId}
 		)
@@ -23,8 +27,10 @@
 		SELECT
 			ID,
 			BLOG_ID,
-			NAME,
+			ORIGINAL_NAME,
+			SAVE_NAME,
 			PATH,
+			SIZE,
 			FRST_REG_DATE,
 			FRST_REG_USER_ID,
 			LAST_CHG_DATE,
@@ -36,7 +42,8 @@
 	
 	<update id="update" parameterType="com.study.aloha.blog.attach.AttachEntity">
 		UPDATE ATTACH
-			SET BLOG_ID = #{blogId}, NAME = #{name}, PATH = #{path}, 
+			SET BLOG_ID = #{blogId}, ORIGINAL_NAME = #{originalName}, 
+				SAVE_NAME = #{saveName}, PATH = #{path}, SIZE = #{size},
 				LAST_CHG_DATE = #{lastChgDate}, LAST_CHG_USER_ID = #{lastChgUserId}  
 		WHERE ID = #{id}
 	</update>	

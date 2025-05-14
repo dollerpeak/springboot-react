@@ -20,6 +20,11 @@ spring:
   #  - 
   application:
     name: springboot-react
+  servlet:
+    multipart:
+      max-file-size: 10MB # default 1MB
+      max-request-size: 100MB # default 10MB
+      location: D:\\workspace-sts\\upload\\
   datasource: # datasource
     #driver-class-name: org.mariadb.jdbc.Driver
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
@@ -63,6 +68,9 @@ mybatis:
   #type-aliases-package: com.study.codingrecipe.board.dto.BoardDto
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mariadb/**/*.xml
+
+
+
 
 
 ## test

@@ -19,15 +19,18 @@ CREATE TABLE `blog` (
 CREATE TABLE `attach` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `blog_id` int(11) NOT NULL COMMENT 'blog id',
-  `name` varchar(100) NOT NULL COMMENT '이름',
-  `path` text NOT NULL COMMENT '경로',
-  `size` varchar(100) DEFAULT NULL COMMENT '용량',
+  `original_name` varchar(255) NOT NULL COMMENT '원본이름',
+  `save_name` varchar(255) NOT NULL COMMENT '저장이름',
+  `path` varchar(255) NOT NULL COMMENT '경로',
+  `size` varchar(255) NOT NULL COMMENT '용량',
   `frst_reg_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '최초등록일',
   `frst_reg_user_id` varchar(20) NOT NULL DEFAULT 'SYSTEM' COMMENT '최초등록자',
   `last_chg_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '변경등록일',
   `last_chg_user_id` varchar(20) NOT NULL DEFAULT 'SYSTEM' COMMENT '변경등록자',  
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+
+-- drop table attach
 
 CREATE TABLE `comment` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
@@ -61,6 +64,9 @@ commit
 
 select * from blog
 
+-- delete from blog 
+-- where id > 33
+
 select * from attach
 
 select * from comment 
@@ -69,7 +75,6 @@ select * from comment
 
 
 
-select * from panel
 
 
 

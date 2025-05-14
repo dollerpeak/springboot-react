@@ -6,8 +6,10 @@ import lombok.Data;
 public class AttachDto {
 	long id;
 	long blogId;
-	String name;
+	String originalName;
+	String saveName;
 	String path;
+	String size;
 	String frstRegDate;
 	String frstRegUserId;
 	String lastChgDate;
@@ -17,8 +19,10 @@ public class AttachDto {
 		AttachEntity entity = new AttachEntity();
 		
 		entity.blogId = blogId;
-		entity.name = name;
+		entity.originalName = originalName;
+		entity.saveName = saveName;
 		entity.path = path;
+		entity.size = size;
 		entity.frstRegDate = frstRegDate;
 		entity.frstRegUserId = frstRegUserId;
 		entity.lastChgDate = lastChgDate;
