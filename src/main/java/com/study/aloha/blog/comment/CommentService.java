@@ -17,6 +17,8 @@ public class CommentService {
 	CommentRepository commentRepository;
 
 	public List<CommentDto> select() throws Exception {
+		log.info("select");
+		
 		List<CommentDto> listDto = new ArrayList<>();
 		List<CommentEntity> listEntity = commentRepository.select();
 		
@@ -27,7 +29,9 @@ public class CommentService {
 		return listDto;
 	}
 	
-	public long insert(CommentDto dto) throws Exception {		
+	public long insert(CommentDto dto) throws Exception {	
+		log.info("insert");
+		
 		CommentEntity entity = dto.toEntity();
 		
 		if(entity.getFrstRegUserId() == null || entity.getFrstRegUserId().length() <= 0) {
@@ -43,24 +47,24 @@ public class CommentService {
 		return entity.getId();
 	}
 	
-	public int update(CommentDto dto) throws Exception {
-		int result = 0;
-		CommentEntity entity = dto.toEntity();
-
-		if(entity.getLastChgDate() == null || entity.getLastChgDate().length() <= 0) {
-			entity.setLastChgDate(DateFormat.getFormatString(System.currentTimeMillis(), null));
-		}
-		
-		result = commentRepository.update(entity);
-		
-		return result;
-	}
+//	public int update(CommentDto dto) throws Exception {
+//		int result = 0;
+//		CommentEntity entity = dto.toEntity();
+//
+//		if(entity.getLastChgDate() == null || entity.getLastChgDate().length() <= 0) {
+//			entity.setLastChgDate(DateFormat.getFormatString(System.currentTimeMillis(), null));
+//		}
+//		
+//		result = commentRepository.update(entity);
+//		
+//		return result;
+//	}
 	
-	public int delete(long id) throws Exception {
-		int result = 0;		
-		result = commentRepository.delete(id);
-		
-		return result;
-	}
+//	public int delete(long id) throws Exception {
+//		int result = 0;		
+//		result = commentRepository.delete(id);
+//		
+//		return result;
+//	}
 	
 }

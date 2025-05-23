@@ -16,28 +16,28 @@ public class BlogRepository {
 	SqlSessionTemplate sqlSessionTemplate;
 
 	public int insert(BlogEntity blogEntity) throws Exception {
-		log.info("blog - insert");
+		log.info("insert");
 		return sqlSessionTemplate.insert(namespace + "insert", blogEntity);
 	}
 
 	public List<BlogEntity> select() throws Exception {
-		log.info("repository - select");
+		log.info("select");
 		return sqlSessionTemplate.selectList(namespace + "select");
 	}
 
 	public BlogEntity detail(long id) throws Exception {
-		log.info("blog - detail");
+		log.info("detail");
 		return sqlSessionTemplate.selectOne(namespace + "detail", id);
 	}
 
-	public int update(BlogEntity blogEntity) throws Exception {
-		log.info("blog - update");
-		return sqlSessionTemplate.update(namespace + "update", blogEntity);
-	}
+//	public int update(BlogEntity blogEntity) throws Exception {
+//		log.info("update");
+//		return sqlSessionTemplate.update(namespace + "update", blogEntity);
+//	}
 
-	public int delete(long id) throws Exception {
-		log.info("blog - delete");
-		return sqlSessionTemplate.delete(namespace + "delete", id);
-	}
+//	public int delete(long id) throws Exception {
+//		log.info("delete");
+//		return sqlSessionTemplate.delete(namespace + "delete", id);
+//	}
 
 }

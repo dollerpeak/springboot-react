@@ -4,29 +4,30 @@ import lombok.Data;
 
 @Data
 public class AttachEntity {
-	long id;
-	long blogId;
-	String originalName;
-	String saveName;
-	String path;
-	String size;
-	String frstRegDate;
-	String frstRegUserId;
-	String lastChgDate;
-	String lastChgUserId;
+	private long id;
+	private long blogId;
+	private String originalName;
+	private String saveName;
+	private String path;
+	private String size;
+	private String frstRegDate;
+	private String frstRegUserId;
+	private String lastChgDate;
+	private String lastChgUserId;
 	
 	public AttachDto toDto() {
 		AttachDto dto = new AttachDto();
-		
-		dto.blogId = blogId;
-		dto.originalName = originalName;
-		dto.saveName = saveName;
-		dto.path = path;
-		dto.size = size;
-		dto.frstRegDate = frstRegDate;
-		dto.frstRegUserId = frstRegUserId;
-		dto.lastChgDate = lastChgDate;
-		dto.lastChgUserId = lastChgUserId;
+
+		dto.setId(id);
+		dto.setBlogId(blogId);
+		dto.setOriginalName(originalName);
+		dto.setSaveName(saveName);
+		dto.setPath(path);
+		dto.setSize(size);
+		dto.setFrstRegDate(frstRegDate);
+		dto.setFrstRegUserId(frstRegUserId);
+		dto.setLastChgDate(lastChgDate);
+		dto.setLastChgUserId(lastChgUserId);
 		
 		return dto;
 	}

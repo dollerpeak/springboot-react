@@ -8,7 +8,7 @@ public class BlogEntity {
 	String title;
 	String writer;
 	String contents;
-	long hits;
+	int attachCount;
 	String frstRegDate;
 	String frstRegUserId;
 	String lastChgDate;
@@ -21,7 +21,7 @@ public class BlogEntity {
 		dto.setTitle(title);
 		dto.setWriter(writer);
 		dto.setContents(contents);
-		dto.setHits(hits);
+		dto.setAttachCount(attachCount);
 		dto.setFrstRegDate(frstRegDate);
 		dto.setFrstRegUserId(frstRegUserId);
 		dto.setLastChgDate(lastChgDate);

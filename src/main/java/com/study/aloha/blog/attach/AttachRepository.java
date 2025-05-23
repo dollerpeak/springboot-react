@@ -16,23 +16,33 @@ public class AttachRepository {
 	SqlSessionTemplate sqlSessionTemplate;
 
 	public int insert(AttachEntity entity) throws Exception {
-		log.info("blog - insert");
+		log.info("insert");
 		return sqlSessionTemplate.insert(namespace + "insert", entity);
 	}
 
 	public List<AttachEntity> select() throws Exception {
-		log.info("repository - select");
+		log.info("select");
 		return sqlSessionTemplate.selectList(namespace + "select");
 	}
 
-	public int update(AttachEntity entity) throws Exception {
-		log.info("blog - update");
-		return sqlSessionTemplate.update(namespace + "update", entity);
+	public AttachEntity detail(long id) throws Exception {
+		log.info("detail");
+		return sqlSessionTemplate.selectOne(namespace + "detail", id);
 	}
 
-	public int delete(long id) throws Exception {
-		log.info("blog - delete");
-		return sqlSessionTemplate.delete(namespace + "delete", id);
+	public List<AttachEntity> selectBlog(long blogId) throws Exception {
+		log.info("selectBlog");
+		return sqlSessionTemplate.selectList(namespace + "selectBlog", blogId);
 	}
+
+//	public int update(AttachEntity entity) throws Exception {
+//		log.info("update");
+//		return sqlSessionTemplate.update(namespace + "update", entity);
+//	}
+//
+//	public int delete(long id) throws Exception {
+//		log.info("delete");
+//		return sqlSessionTemplate.delete(namespace + "delete", id);
+//	}
 
 }

@@ -8,14 +8,14 @@
 			TITLE,
 			WRITER,
 			CONTENTS,	
-			HITS,
+			ATTACH_COUNT,
 			FRST_REG_USER_ID,
 			LAST_CHG_USER_ID
 		) VALUES (
 			#{title},
 			#{writer},
 			#{contents},	
-			#{hits},
+			#{attachCount},
 			#{frstRegUserId},
 			#{lastChgUserId}
 		)
@@ -35,7 +35,7 @@
 			TITLE,
 			WRITER,
 			CONTENTS,
-			HITS,
+			ATTACH_COUNT,
 			FRST_REG_DATE,
 			FRST_REG_USER_ID,
 			LAST_CHG_DATE,
@@ -51,7 +51,7 @@
 			TITLE,
 			WRITER,
 			CONTENTS,
-			HITS,
+			ATTACH_COUNT,
 			FRST_REG_DATE,
 			FRST_REG_USER_ID,
 			LAST_CHG_DATE,
@@ -63,7 +63,7 @@
 	
 	<update id="update" parameterType="com.study.aloha.blog.BlogEntity">
 		UPDATE BLOG
-			SET TITLE = #{title}, WRITER = #{writer}, CONTENTS = #{contents}, HITS = #{hits},
+			SET TITLE = #{title}, WRITER = #{writer}, CONTENTS = #{contents}, ATTACH_COUNT = #{attachCount},
 				LAST_CHG_DATE = #{lastChgDate}, LAST_CHG_USER_ID = #{lastChgUserId}  
 		WHERE ID = #{id}
 	</update>

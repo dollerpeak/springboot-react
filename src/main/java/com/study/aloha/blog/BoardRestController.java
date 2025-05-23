@@ -53,36 +53,36 @@ public class BoardRestController {
 		}
 	}
 
-	@PutMapping()
-	public ResponseEntity<?> update(@RequestBody BlogDto blogDto) {
-		try {
-			int result = blogService.update(blogDto);
-			return new ResponseEntity<>(result, HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-	}
+//	@PutMapping()
+//	public ResponseEntity<?> update(@RequestBody BlogDto blogDto) {
+//		try {
+//			int result = blogService.update(blogDto);
+//			return new ResponseEntity<>(result, HttpStatus.OK);
+//		} catch (Exception e) {
+//			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+//		}
+//	}
 
-	@DeleteMapping("/{id}")
-	public ResponseEntity<?> destroy(@PathVariable int id) {
-		try {
-			log.info("rest controller, id = " + id);
-			int result = blogService.delete(id);
-			return new ResponseEntity<>(result, HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-	}
+//	@DeleteMapping("/{id}")
+//	public ResponseEntity<?> destroy(@PathVariable int id) {
+//		try {
+//			log.info("rest controller, id = " + id);
+//			int result = blogService.delete(id);
+//			return new ResponseEntity<>(result, HttpStatus.OK);
+//		} catch (Exception e) {
+//			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+//		}
+//	}
 	
-	@PostMapping("/delete")
-	public ResponseEntity<?> destroy_test(@RequestBody BlogDto blogDto) {
-		try {
-			log.info("rest controller, getId = " + blogDto.getId());
-			int result = blogService.delete(blogDto.getId());
-			return new ResponseEntity<>(result, HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-	}
+//	@PostMapping("/delete")
+//	public ResponseEntity<?> destroy_test(@RequestBody BlogDto blogDto) {
+//		try {
+//			log.info("rest controller, getId = " + blogDto.getId());
+//			int result = blogService.delete(blogDto.getId());
+//			return new ResponseEntity<>(result, HttpStatus.OK);
+//		} catch (Exception e) {
+//			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+//		}
+//	}
 
 }

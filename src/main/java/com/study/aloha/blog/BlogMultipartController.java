@@ -1,16 +1,12 @@
 package com.study.aloha.blog;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.study.common.DateFormat;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,37 +18,43 @@ public class BlogMultipartController {
 	BlogService blogService;
 
 	@GetMapping("/select")
-	public String select(Model model) throws Exception{
+	public String select(Model model) throws Exception {
+		log.info("select");
 
-		// repository로 mapper연결할때
 		model.addAttribute("blogList", blogService.select());
-		// interface mapper연결할때
-		//model.addAttribute("blogList", blogService.select_mapper());
-		log.info("controller - select");
-		
+
 		return "/aloha/blog/multipart/select";
 	}
-	
+
 	@GetMapping("/insert")
 	public String insert() throws Exception {
+		log.info("insert");
+		
 		return "/aloha/blog/multipart/insert";
 	}
-	
+
 	@PostMapping("/insert")
-	public String insert(BlogDto dto) throws Exception {		
+	public String insert(BlogDto dto) throws Exception {
+		log.info("insert");
 		log.info("dto = " + dto.toString());
-		
+
 		long id = blogService.insert(dto);
 		log.info("id = " + id);
-		
-		//test
-//		Blog test = new Blog(0, "test", "test", "test", 
-//				DateFormat.getFormatString(System.currentTimeMillis(), null),
-//				DateFormat.getFormatString(System.currentTimeMillis(), null));		
-//		model.addAttribute("blog", test);
-		
+
 		return "redirect:/aloha/blog/multipart/select";
 	}
 	
-	
+	@GetMapping("/detail")
+	public String detail(@RequestParam int id, Model model) throws Exception {
+		log.info("detail");		
+		log.info("id = " + id);
+		
+		BlogDto dto = blogService.detail(id);
+		log.info("dto = " + dto.toString());
+		
+		model.addAttribute("blog", dto);
+		
+		return "/aloha/blog/multipart/detail";
+	}
+
 }

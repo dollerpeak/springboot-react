@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.study.aloha.blog.attach.AttachDto;
+
 import lombok.Data;
 
 @Data
@@ -12,13 +14,14 @@ public class BlogDto {
 	String title;
 	String writer;
 	String contents;
-	long hits;
+	int attachCount;
 	String frstRegDate;
 	String frstRegUserId;
 	String lastChgDate;
 	String lastChgUserId;
 	
-	List<MultipartFile> fileList;
+	List<MultipartFile> multipartFileList;
+	List<AttachDto> attachList;
 	
 	public BlogEntity toEntity() {
 		BlogEntity entity = new BlogEntity();
@@ -27,7 +30,7 @@ public class BlogDto {
 		entity.setTitle(title);
 		entity.setWriter(writer);
 		entity.setContents(contents);
-		entity.setHits(hits);
+		entity.setAttachCount(attachCount);
 		entity.setFrstRegDate(frstRegDate);
 		entity.setFrstRegUserId(frstRegUserId);
 		entity.setLastChgDate(lastChgDate);

@@ -26,65 +26,26 @@ public class AttachService {
 	@Autowired
 	AttachRepository attachRepository;
 
-	public List<AttachDto> select() throws Exception {
-		List<AttachDto> listDto = new ArrayList<>();
-		List<AttachEntity> listEntity = attachRepository.select();
-
-		for (AttachEntity entity : listEntity) {
-			listDto.add(entity.toDto());
-		}
-
-		return listDto;
+	public AttachDto detail(long id) throws Exception {
+		log.info("detail");
+		AttachEntity entity = attachRepository.detail(id);
+		
+		return entity.toDto();
 	}
 
-	public long insert(AttachDto dto) throws Exception {
-		AttachEntity entity = dto.toEntity();
-
-		if (entity.getFrstRegUserId() == null || entity.getFrstRegUserId().length() <= 0) {
-			entity.setFrstRegUserId("SYSTEM");
-		}
-		if (entity.getLastChgUserId() == null || entity.getLastChgUserId().length() <= 0) {
-			entity.setLastChgUserId("SYSTEM");
-		}
-
-		attachRepository.insert(entity);
-		log.info("entity = " + entity.toString());
-
-		return entity.getId();
-	}
-
-	public int update(AttachDto dto) throws Exception {
-		int result = 0;
-		AttachEntity entity = dto.toEntity();
-
-		if (entity.getLastChgDate() == null || entity.getLastChgDate().length() <= 0) {
-			entity.setLastChgDate(DateFormat.getFormatString(System.currentTimeMillis(), null));
-		}
-
-		result = attachRepository.update(entity);
-
-		return result;
-	}
-
-	public int delete(long id) throws Exception {
-		int result = 0;
-		result = attachRepository.delete(id);
-
-		return result;
-	}
-
-	public boolean upload(long id, MultipartFile multipartFile) throws Exception {
+	public boolean insert(long id, MultipartFile multipartFile) throws Exception {
+		log.info("insert");
+		
 		boolean result = false;
-
 		AttachDto dto = null;
 		byte[] fileData = null;
 		File file = null;
 
-//		log.info("file, getOriginalFilename = " + multipartFile.getOriginalFilename());
-//		log.info("file, getName = " + multipartFile.getName());
-//		log.info("file, getContentType = " + multipartFile.getContentType());
-//		log.info("file, getSize = " + multipartFile.getSize());
-//		log.info("file, getResource = " + multipartFile.getResource());
+		//log.info("file, getOriginalFilename = " + multipartFile.getOriginalFilename());
+		//log.info("file, getName = " + multipartFile.getName());
+		//log.info("file, getContentType = " + multipartFile.getContentType());
+		//log.info("file, getSize = " + multipartFile.getSize());
+		//log.info("file, getResource = " + multipartFile.getResource());
 
 		dto = new AttachDto();
 		dto.setBlogId(id);
@@ -110,5 +71,39 @@ public class AttachService {
 		
 		return result;
 	}
+
+	public List<AttachDto> selectBlog(long blogId) throws Exception {
+		log.info("selectBlog");
+		List<AttachDto> listDto = new ArrayList<>();
+		List<AttachEntity> listEntity = attachRepository.selectBlog(blogId);
+
+		for (AttachEntity entity : listEntity) {
+			listDto.add(entity.toDto());
+		}
+
+		return listDto;
+	}
+
+//	public int update(AttachDto dto) throws Exception {
+//		log.info("update");
+//		int result = 0;
+//		AttachEntity entity = dto.toEntity();
+//
+//		if (entity.getLastChgDate() == null || entity.getLastChgDate().length() <= 0) {
+//			entity.setLastChgDate(DateFormat.getFormatString(System.currentTimeMillis(), null));
+//		}
+//
+//		result = attachRepository.update(entity);
+//
+//		return result;
+//	}
+//
+//	public int delete(long id) throws Exception {
+//		log.info("delete");
+//		int result = 0;
+//		result = attachRepository.delete(id);
+//
+//		return result;
+//	}
 
 }

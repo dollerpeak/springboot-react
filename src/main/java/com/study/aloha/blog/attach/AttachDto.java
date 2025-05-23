@@ -4,29 +4,30 @@ import lombok.Data;
 
 @Data
 public class AttachDto {
-	long id;
-	long blogId;
-	String originalName;
-	String saveName;
-	String path;
-	String size;
-	String frstRegDate;
-	String frstRegUserId;
-	String lastChgDate;
-	String lastChgUserId;
+	private long id;
+	private long blogId;
+	private String originalName;
+	private String saveName;
+	private String path;
+	private String size;
+	private String frstRegDate;
+	private String frstRegUserId;
+	private String lastChgDate;
+	private String lastChgUserId;
 	
 	public AttachEntity toEntity() {
 		AttachEntity entity = new AttachEntity();
 		
-		entity.blogId = blogId;
-		entity.originalName = originalName;
-		entity.saveName = saveName;
-		entity.path = path;
-		entity.size = size;
-		entity.frstRegDate = frstRegDate;
-		entity.frstRegUserId = frstRegUserId;
-		entity.lastChgDate = lastChgDate;
-		entity.lastChgUserId = lastChgUserId;
+		entity.setId(id);
+		entity.setBlogId(blogId);
+		entity.setOriginalName(originalName);
+		entity.setSaveName(saveName);
+		entity.setPath(path);
+		entity.setSize(size);
+		entity.setFrstRegDate(frstRegDate);
+		entity.setFrstRegUserId(frstRegUserId);
+		entity.setLastChgDate(lastChgDate);
+		entity.setLastChgUserId(lastChgUserId);
 		
 		return entity;
 	}

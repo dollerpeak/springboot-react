@@ -4,25 +4,26 @@ import lombok.Data;
 
 @Data
 public class CommentEntity {
-	long id;
-	long blogId;
-	String writer;
-	String contents;
-	String frstRegDate;
-	String frstRegUserId;
-	String lastChgDate;
-	String lastChgUserId;
+	private long id;
+	private long blogId;
+	private String writer;
+	private String contents;
+	private String frstRegDate;
+	private String frstRegUserId;
+	private String lastChgDate;
+	private String lastChgUserId;
 	
 	public CommentDto toDto() {
 		CommentDto dto = new CommentDto();
 		
-		dto.blogId = blogId;
-		dto.writer = writer;
-		dto.contents = contents;
-		dto.frstRegDate = frstRegDate;
-		dto.frstRegUserId = frstRegUserId;
-		dto.lastChgDate = lastChgDate;
-		dto.lastChgUserId = lastChgUserId;
+		dto.setId(id);
+		dto.setBlogId(blogId);
+		dto.setWriter(writer);
+		dto.setContents(contents);
+		dto.setFrstRegDate(frstRegDate);
+		dto.setFrstRegUserId(frstRegUserId);
+		dto.setLastChgDate(lastChgDate);
+		dto.setLastChgUserId(lastChgUserId);
 		
 		return dto;
 	}
